@@ -1,0 +1,100 @@
+import { createContext, useContext } from 'react';
+
+export type Language = 'zh' | 'en';
+
+export const translations = {
+  zh: {
+    targetProduct: '目标产物',
+    targetPlaceholder: '例如: gtceu:lv_machine_hull',
+    availableMaterials: '可用原材料',
+    addMaterialPlaceholder: '添加材料...',
+    blacklist: '黑名单',
+    addBlacklistPlaceholder: '加入黑名单...',
+    startSearch: '开始搜索',
+    clearResults: '清除结果',
+    foundTrees: '候选树',
+    resolved: '已完全解析',
+    partial: '部分解析',
+    searchResults: '搜索结果',
+    foundCandidateTrees: (count: number, ms: number) => `耗时 ${ms}ms，找到 ${count} 个候选树。`,
+    surplusMatches: '余量满足',
+    recipeTree: '配方树',
+    steps: '机器数',
+    time: '耗时',
+    fails: '失败分支',
+    noRecipes: '此配方树中未推导出任何机器配方。',
+    fromSurplus: '来自余量',
+    runs: '次运行',
+    configuration: '搜索配置',
+    globalTemplateEnv: 'GT 模拟环境',
+    pathfinder: '配方探路者',
+    noOutputYet: '等待搜索...',
+    configureSearch: '请在侧边栏配置您的搜索目标，并点击“开始搜索”。',
+    exportJson: '导出 JSON',
+    localizationPacks: '本地汉化包',
+    builtInLocalizationPack: '内置 GTCEu Modern',
+    uploadLocalizationPack: '上传语言包 JSON',
+    localizationPackEmpty: '还没有上传自定义语言包。',
+    deleteLocalizationPack: '删除语言包',
+    localizationPackHint: '支持标准 Minecraft lang JSON。内置 GTCEu 汉化始终优先。',
+    localizationPackImported: (count: number) => `已导入 ${count} 个语言包。`,
+    localizationPackImportFailed: '导入语言包失败。',
+    downloadTreeJson: '下载树 JSON',
+    treeExportFailed: '下载树失败。',
+    toggleLang: 'EN',
+  },
+  en: {
+    targetProduct: 'Target Product',
+    targetPlaceholder: 'e.g. gtceu:lv_machine_hull',
+    availableMaterials: 'Available Materials',
+    addMaterialPlaceholder: 'Add material...',
+    blacklist: 'Blacklist',
+    addBlacklistPlaceholder: 'Add to blacklist...',
+    startSearch: 'Start Search',
+    clearResults: 'Clear Results',
+    foundTrees: 'Found Trees',
+    resolved: 'Resolved',
+    partial: 'Partial',
+    searchResults: 'Search Results',
+    foundCandidateTrees: (count: number, ms: number) => `Found ${count} candidate tree(s) in ${ms}ms.`,
+    surplusMatches: 'Surplus Matches',
+    recipeTree: 'Recipe Tree',
+    steps: 'Machines',
+    time: 'Time',
+    fails: 'Fails',
+    noRecipes: 'No recipes found in this tree.',
+    fromSurplus: 'from surplus',
+    runs: 'runs',
+    configuration: 'Configuration',
+    globalTemplateEnv: 'Global Template Environment',
+    pathfinder: 'Recipe Pathfinder',
+    noOutputYet: 'No Output Yet',
+    configureSearch: 'Configure your search in the sidebar and hit Start Search.',
+    exportJson: 'Export JSON',
+    localizationPacks: 'Localization Packs',
+    builtInLocalizationPack: 'Built-in GTCEu Modern',
+    uploadLocalizationPack: 'Upload lang JSON',
+    localizationPackEmpty: 'No custom localization packs uploaded yet.',
+    deleteLocalizationPack: 'Delete pack',
+    localizationPackHint: 'Accepts standard Minecraft lang JSON files. Built-in GTCEu entries always win.',
+    localizationPackImported: (count: number) => `Imported ${count} localization pack(s).`,
+    localizationPackImportFailed: 'Failed to import localization pack.',
+    downloadTreeJson: 'Download tree JSON',
+    treeExportFailed: 'Failed to download tree.',
+    toggleLang: '中',
+  },
+};
+
+interface LanguageContextType {
+  lang: Language;
+  setLang: (l: Language) => void;
+  t: typeof translations.zh;
+}
+
+export const LanguageContext = createContext<LanguageContextType>({
+  lang: 'zh',
+  setLang: () => {},
+  t: translations.zh,
+});
+
+export const useTranslation = () => useContext(LanguageContext);

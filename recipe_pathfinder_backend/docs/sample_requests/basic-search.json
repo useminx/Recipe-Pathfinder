@@ -1,0 +1,22 @@
+{
+  "input": [
+    "E:\\.minecraft\\versions\\GregTech Odyssey\\dumped_recipes\\gtceu\\recipes.json",
+    "E:\\.minecraft\\versions\\GregTech Odyssey\\dumped_recipes\\gtocore\\recipes.json"
+  ],
+  "target": "gtceu:lv_machine_hull",
+  "target_kind": "item",
+  "target_amount": 1,
+  "available_material": [
+    "minecraft:iron_ingot",
+    "minecraft:redstone"
+  ],
+  "blacklist": [
+    "minecraft:water",
+    "gtceu:oxygen"
+  ],
+  "enable_surplus_reuse": true,
+  "max_depth": 32,
+  "max_trees": 50,
+  "max_branching_per_material": 10,
+  "max_nodes_per_tree": 500
+}

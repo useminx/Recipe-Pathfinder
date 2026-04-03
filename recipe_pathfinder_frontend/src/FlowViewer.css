@@ -1,0 +1,61 @@
+.flow-viewer-container {
+  width: 100%;
+  height: 600px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* XYFlow internal overrides for neatness */
+.react-flow__panel {
+  background: rgba(255,255,255, 0.9);
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.react-flow__controls-button {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+.react-flow__controls-button:hover {
+  background: #f1f5f9;
+}
+
+/* Fullscreen toggle button */
+.fullscreen-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: all 0.2s;
+}
+.fullscreen-toggle:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Fullscreen modifier */
+.flow-viewer-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  border-radius: 0;
+  border: none;
+}

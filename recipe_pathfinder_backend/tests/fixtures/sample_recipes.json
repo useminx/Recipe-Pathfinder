@@ -1,0 +1,31 @@
+[
+  {
+    "namespace": "gtceu",
+    "id": "gtceu:assembler/example_output",
+    "type": "Recipe",
+    "duration": 20,
+    "EUt": 8,
+    "inputs": [
+      {
+        "item": "minecraft:iron_ingot",
+        "type": "item",
+        "count": 2,
+        "capability": "ItemRecipe"
+      },
+      {
+        "fluid": "minecraft:water",
+        "type": "fluid",
+        "amount": 1000,
+        "capability": "FluidRecipe"
+      }
+    ],
+    "outputs": [
+      {
+        "item": "minecraft:bucket",
+        "type": "item",
+        "count": 1,
+        "capability": "ItemRecipe"
+      }
+    ]
+  }
+]
